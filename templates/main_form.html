@@ -1,12 +1,13 @@
 {% extends 'base.html' %} 
 {% block title %}Form{% endblock title %}
 {% block body %}
-
+<div class="mt-6 ps-4 ms-3">
 <h1 style="text-align: center">Timetable Form</h1>
 
-<h2>Timings</h2>
+<h3>Enter the following details</h3>
+<br>
 
-<form style="text-align: center" method="POST" action="{% url 'timetable:teacher_form'%}">
+<form style="text-align: center" method="POST" action="{% url 'timetable:main_form'%}">
   {% csrf_token %}
 <div class="row g-1 align-items-center">
     <div class="col-auto">
@@ -49,12 +50,12 @@
   </div>
   <br>
 
-<div class="row g-1 align-items-center">
+<div class="row g-1 align-items">
     <div class="col-auto">
       <label
-        class="has-text-weight-medium has-text-centered is-size-5"
+        class="align-content-lg-start justify-content-evenly has-text-weight-medium is-size"
         for="no_of_teachers"
-        >Number of teachers</label
+        >Number of teachers </label
       >
       <br>
       <input
@@ -133,5 +134,5 @@
 
   <input type="submit" class="btn btn-primary"></input>
 </form>
-
+</div>
 {% endblock body %}
